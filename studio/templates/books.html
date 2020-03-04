@@ -39,7 +39,15 @@
     <h4>File URL</h4>
     <p>{{uploaded_file_url}}</p>
     <h4>File Data as Table</h4>
-    <p>{{user_data}}</p>
+    <table>
+      {% for i in values_data %}
+      <tr>
+        {%for e in i%}
+          <td>{{e}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
     <h4>File Columns</h4>
     <form action="books2" method="post">
       {% csrf_token %}
